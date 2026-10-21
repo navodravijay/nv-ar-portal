@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# AI Model Files
+*.task
+
+# Environment and Secrets
+.env
+.env.*
+*.key
+*.pem
+
+# Camera Recordings
+*.mp4
+*.avi
+*.mov
+
+# Temporary Files
+*.log
+.DS_Store
+Thumbs.db
