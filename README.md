@@ -5,6 +5,14 @@
 and cinematic holographic effects.
 Synthetic preview, not a live camera capture.*
 
+### Developer & Creator
+
+**Navod Ravindu Jayaweera**
+
+Founder & Developer — NV SHARP SOLUTIONS
+
+Project: NV. AR Portal V4 — Cinematic Edition
+
 **NV SHARP SOLUTIONS** · An original, privacy-conscious Python computer-vision demo built **from the working V3 codebase**, without changing V3.
 
 This is a **2.5D screen-space illusion**, **not** real 3D spatial tracking. As two open hands move in front of a webcam, MediaPipe supplies 2D hand landmarks, OpenCV constructs a four-corner polygon between thumb/index pairs and maps a stylized live image into it.
