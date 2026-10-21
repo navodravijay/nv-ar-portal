@@ -1,4 +1,9 @@
 # NV. AR PORTAL V4 — CINEMATIC UPGRADE
+![NV. AR Portal V4 Cinematic Preview](preview_synthetic.png)
+
+*NV. AR Portal V4 — AI-powered hand tracking
+and cinematic holographic effects.
+Synthetic preview, not a live camera capture.*
 
 **NV SHARP SOLUTIONS** · An original, privacy-conscious Python computer-vision demo built **from the working V3 codebase**, without changing V3.
 
