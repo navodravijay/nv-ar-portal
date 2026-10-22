@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#080d1b">
+  <meta name="description" content="NV. AR Portal Web — explore gesture-controlled holographic visual effects, powered by local camera processing and MediaPipe Hand Landmarker. An experiment by Navod Ravindu Jayaweera, NV SHARP SOLUTIONS.">
+  <title>NV. AR Portal Web | NV SHARP SOLUTIONS</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="NV SHARP SOLUTIONS — AR Portal home">
+        <span class="brandmark">NV.</span>
+        <span class="brandlines"><strong>NV SHARP SOLUTIONS</strong><small>EXPERIMENTAL EXPERIENCE LAB</small></span>
+      </a>
+      <div class="top-links">
+        <span class="label-online"><span class="live-dot"></span> WEB EDITION / V1</span>
+        <a href="https://github.com/navodravijay/nv-ar-portal" rel="noopener noreferrer" target="_blank" class="repo-link">VIEW SOURCE <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+
+    <main id="home">
+      <section class="intro" aria-labelledby="hero-title">
+        <div class="eyebrow"><span class="eyebrow-line"></span> A NEW DIMENSION OF INTERACTION <span class="eyebrow-line"></span></div>
+        <h1 id="hero-title">CONTROL THE <em>UNREAL.</em></h1>
+        <p>Turn your hands into a digital canvas. A real-time holographic portal, controlled by gesture, right in your browser.</p>
+      </section>
+
+      <section class="lab" aria-label="Interactive AR Portal laboratory">
+        <div class="stage-header">
+          <div class="stage-title"><span class="status-orbit"></span><span>NV. / LIVE INTERACTION SPACE</span></div>
+          <div class="stage-meta"><span id="fpsLabel">FPS --</span><span class="stage-meta-sep">/</span><span id="handLabel">0 HANDS</span></div>
+        </div>
+        <div class="stage" id="stage">
+          <canvas id="scene" aria-label="Camera and holographic portal visualization"></canvas>
+          <video id="camera" muted autoplay playsinline aria-hidden="true"></video>
+          <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+          <div class="stage-overlay">
+            <span class="stage-serial">NV. / XR-001</span>
+            <span class="stage-side">AUGMENTED VISION ENGINE</span>
+          </div>
+          <div class="center-prompt" id="centerPrompt">
+            <div class="prompt-glyph" aria-hidden="true"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><span>NV.</span></div>
+            <div class="prompt-title" id="promptTitle">YOUR PORTAL AWAITS</div>
+            <div class="prompt-desc" id="promptDesc">Enable your camera to begin the experience.</div>
+          </div>
+          <div class="scanline-overlay" aria-hidden="true"></div>
+          <div class="stage-bottom">
+            <div class="status"><span id="statusLight" class="status-light"></span><span id="statusText" role="status" aria-live="polite">SYSTEM READY · CAMERA OFF</span></div>
+            <span class="coordinates">LOCAL PROCESSING · NO RECORDING</span>
+          </div>
+        </div>
+
+        <div class="control-dock">
+          <div class="control-group main-actions">
+            <button class="primary-action" id="startBtn" type="button"><span class="action-icon">◉</span> START CAMERA <span class="action-arrow">↗</span></button>
+            <button class="secondary-action" id="stopBtn" type="button" disabled>■ STOP</button>
+          </div>
+          <div class="dock-divider"></div>
+          <div class="controls-right">
+            <button class="switch-btn" id="cycleBtn" type="button" disabled>↻ NEXT EFFECT</button>
+            <button class="switch-btn" id="ecoBtn" type="button" aria-pressed="false">◈ ECO MODE <span id="ecoState">OFF</span></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="effect-section" aria-labelledby="effects-title">
+        <div class="section-kicker">01 / SELECT A FREQUENCY</div>
+        <div class="section-heading"><div><h2 id="effects-title">Visual <span>dimensions.</span></h2><p>Choose an effect. Raise two hands and stretch your thumb and index fingers to shape the portal.</p></div><div class="microchip">06 MODES / REAL TIME</div></div>
+        <div class="effects" id="effects" role="group" aria-label="Portal visual effect">
+          <button class="effect active" data-effect="0" type="button" aria-pressed="true"><span class="effect-id">01</span><span class="effect-symbol">✦</span><strong>CYBER</strong><small>Hologram</small></button>
+          <button class="effect" data-effect="1" type="button" aria-pressed="false"><span class="effect-id">02</span><span class="effect-symbol rgb">◈</span><strong>RGB SHIFT</strong><small>Chromatic</small></button>
+          <button class="effect" data-effect="2" type="button" aria-pressed="false"><span class="effect-id">03</span><span class="effect-symbol">⌁</span><strong>NEON</strong><small>Electric</small></button>
+          <button class="effect" data-effect="3" type="button" aria-pressed="false"><span class="effect-id">04</span><span class="effect-symbol">❋</span><strong>AURORA</strong><small>Prismatic</small></button>
+          <button class="effect" data-effect="4" type="button" aria-pressed="false"><span class="effect-id">05</span><span class="effect-symbol">◇</span><strong>SPECTRAL</strong><small>Negative</small></button>
+          <button class="effect" data-effect="5" type="button" aria-pressed="false"><span class="effect-id">06</span><span class="effect-symbol">▧</span><strong>NOIR</strong><small>Monochrome</small></button>
+        </div>
+      </section>
+
+      <section class="instructions" aria-labelledby="how-title">
+        <div class="info-column"><div class="section-kicker">02 / THE INTERFACE IS YOU</div><h2 id="how-title">No controllers.<br><span>Just you.</span></h2><p>MediaPipe recognizes hand landmarks on your device. The portal forms between your hands. Adjust your hand position to move and reshape it.</p></div>
+        <div class="instructions-list">
+          <div class="instruction"><span>01</span><div><h3>ACTIVATE</h3><p>Press Start Camera and allow browser access.</p></div></div>
+          <div class="instruction"><span>02</span><div><h3>SHAPE THE PORTAL</h3><p>Show both hands, with thumbs and index fingers apart. Keep them visible.</p></div></div>
+          <div class="instruction"><span>03</span><div><h3>SHIFT REALITY</h3><p>Use the six effect tiles, keys 1–6, or pinch with one hand for 0.7 seconds to switch.</p></div></div>
+          <div class="instruction"><span>04</span><div><h3>STAY IN CONTROL</h3><p>Press Stop or leave the page to stop the camera. No built-in capture or upload.</p></div></div>
+        </div>
+      </section>
+
+      <aside class="privacy-note"><span class="privacy-symbol">⊙</span><div><strong>YOUR CAMERA. YOUR CONTROL.</strong><p>Camera frames are processed in your browser. We do not include photo recording, uploads, user accounts or analytics. MediaPipe code, WASM and an AI model are downloaded from third-party hosts when needed; the MediaPipe library may transmit usage metrics. See the <a href="https://www.npmjs.com/package/@mediapipe/tasks-vision" target="_blank" rel="noopener noreferrer">MediaPipe privacy notice</a>.</p></div></aside>
+    </main>
+
+    <footer class="footer"><div><strong>NV.</strong> AR PORTAL <span>—</span> EXPERIMENTAL WEB EDITION</div><div>CREATED BY <strong>NAVOD RAVINDU JAYAWEERA</strong><span class="foot-line">© NV SHARP SOLUTIONS</span></div></footer>
+  </div>
+</body>
+</html>
